@@ -1,0 +1,61 @@
+#include <stdio.h>
+int main()
+{
+    int a,b;
+    printf("Enter the month number from 1 to 12\n");
+    scanf("%d",&a);
+    printf("Enter the year\n");
+    scanf("%d",&b);
+    int jan=31,feb=28,mar=31,apr=30,may=31,june=30,july=31,aug=31,sep=30,oct=31,nov=30,dec=31,days=0;
+    switch(a)
+    {
+        case 1:
+            days=jan+feb+mar+apr+may+june+july+aug+sep+oct+nov+dec;
+            break;
+        case 2:
+            if(b%4==0 && b%100!=0 || b%400==0){
+                feb=29;
+                days=feb+mar+apr+may+june+july+aug+sep+oct+nov+dec;
+                break;
+            }
+            else{
+                days=feb+mar+apr+may+june+july+aug+sep+oct+nov+dec;
+                break;
+            }
+        case 3:
+            days=mar+apr+may+june+july+aug+sep+oct+nov+dec;
+            break;
+        case 4:
+            days=apr+may+june+july+aug+sep+oct+nov+dec; 
+            break;
+        case 5:
+            days=may+june+july+aug+sep+oct+nov+dec;
+            break;
+        case 6:
+            days=june+july+aug+sep+oct+nov+dec;
+            break;
+        case 7:
+            days=july+aug+sep+oct+nov+dec;
+            break;
+        case 8:
+            days=aug+sep+oct+nov+dec;
+            break;
+        case 9:
+            days=sep+oct+nov+dec;
+            break;
+        case 10:
+            days=oct+nov+dec;
+            break;
+        case 11:
+            days=nov+dec;
+            break;
+        case 12:
+            days=dec;  
+            break;
+
+                            
+    }
+    printf("The days from month %d to december is %d",a,days);
+
+    return 0;
+}
